@@ -17,15 +17,28 @@ class App extends React.Component {
 
   render() {
     const { statements } = this.state;
+    const statement = statements.map(statement => {
+      return (
+        <div>
+          {statement.date}
+
+          {statement.transactions.map(transaction => (
+            <table>
+              <tr>
+                <td>{transaction.name}</td>
+                <td>{transaction.date}</td>
+                <td>{transaction.description}</td>
+              </tr>
+            </table>
+          ))}
+        </div>
+      );
+    });
 
     return (
       <div className="App">
         <h1>Bank account:</h1>
-        {statements.map(statement => (
-          <ul>
-            <li>{statement.iban}</li>
-          </ul>
-        ))}
+        {statement}
       </div>
     );
   }
