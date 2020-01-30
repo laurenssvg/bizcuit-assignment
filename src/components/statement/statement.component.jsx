@@ -1,6 +1,8 @@
 import React from "react";
 import "./statement.styles.css";
 
+import StatementTransaction from "../statement-transaction/statement-transaction.component";
+
 const Statement = ({ statements }) => {
   const statement = statements.map(statement => {
     return (
@@ -8,20 +10,7 @@ const Statement = ({ statements }) => {
         {statement.date}
 
         {statement.transactions.map(transaction => (
-          <div className='transaction'>
-            <div>
-              <span className='name'>{transaction.name}</span>
-              {transaction.debit_credit === "credit" ? (
-                <span className='amount'>
-                  +{transaction.amount.toFixed(2)},-
-                </span>
-              ) : (
-                <span className='amount'>
-                  -{transaction.amount.toFixed(2)},-
-                </span>
-              )}
-            </div>
-          </div>
+          <StatementTransaction transaction={transaction} />
         ))}
       </div>
     );
