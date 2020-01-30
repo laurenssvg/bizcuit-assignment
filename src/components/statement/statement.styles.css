@@ -1,0 +1,10 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,18 @@
+.name {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.amount {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.transaction {
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+
+.transaction:hover {
+  background-color: azure;
+}

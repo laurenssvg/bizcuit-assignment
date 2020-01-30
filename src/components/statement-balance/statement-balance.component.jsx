@@ -1,8 +1,8 @@
 import React from "react";
 import "./statement-balance.styles.css";
 
-const StatementBalance = () => {
-  return <div>Balance</div>;
+const StatementBalance = ({ balance }) => {
+  return <div>{balance.amount}</div>;
 };
 
 export default StatementBalance;
