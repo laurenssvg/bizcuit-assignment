@@ -10,7 +10,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      statements: []
+      statements: [],
+      searchField: ""
     };
   }
 
@@ -19,14 +20,21 @@ class App extends React.Component {
     this.setState({ statements: data });
   }
 
+  handleChange = e => {
+    this.setState({ searchField: e.target.value });
+  };
+
   render() {
-    const { statements } = this.state;
+    const { statements, searchField } = this.state;
+    const filteredStatements = statements.filter(statement =>
+      statement.date.toLowerCase().includes(searchField.toLowerCase())
+    );
 
     return (
-      <div>
+      <div className='App'>
         <Header />
-        <SearchBox placeholder='Search...' />
-        <Statement statements={statements} />
+        <SearchBox placeholder='Search...' handleChange={this.handleChange} />
+        <Statement statements={filteredStatements} />
       </div>
     );
   }
