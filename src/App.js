@@ -21,32 +21,10 @@ class App extends React.Component {
   render() {
     const { statements } = this.state;
 
-    const statement = statements.map(statement => {
-      return (
-        <div>
-          {statement.date}
-
-          {statement.transactions.map(transaction => (
-            <table>
-              <tr>
-                <td>{transaction.name}</td>
-                <td>{transaction.date}</td>
-                {transaction.debit_credit === "credit" ? (
-                  <td>+{transaction.amount}</td>
-                ) : (
-                  <td>-{transaction.amount}</td>
-                )}
-              </tr>
-            </table>
-          ))}
-        </div>
-      );
-    });
-
     return (
       <div>
         <Header />
-        <Statement statement={statement} />
+        <Statement statements={statements} />
       </div>
     );
   }
