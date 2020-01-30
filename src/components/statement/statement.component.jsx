@@ -4,20 +4,24 @@ import "./statement.styles.css";
 const Statement = ({ statements }) => {
   const statement = statements.map(statement => {
     return (
-      <div>
+      <div className='statement'>
         {statement.date}
 
         {statement.transactions.map(transaction => (
-          <table>
-            <tr>
-              <td>{transaction.name}</td>
+          <div className='transaction'>
+            <div>
+              <span className='name'>{transaction.name}</span>
               {transaction.debit_credit === "credit" ? (
-                <td>+{transaction.amount}</td>
+                <span className='amount'>
+                  +{transaction.amount.toFixed(2)},-
+                </span>
               ) : (
-                <td>-{transaction.amount}</td>
+                <span className='amount'>
+                  -{transaction.amount.toFixed(2)},-
+                </span>
               )}
-            </tr>
-          </table>
+            </div>
+          </div>
         ))}
       </div>
     );

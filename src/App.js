@@ -3,6 +3,7 @@ import "./App.css";
 
 import Header from "./components/header/header.component";
 import Statement from "./components/statement/statement.component";
+import { SearchBox } from "./components/search-box/search-box.component";
 
 class App extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <SearchBox />
         <Statement statements={statements} />
       </div>
     );
