@@ -1,18 +1,23 @@
 .name {
   display: flex;
   justify-content: flex-start;
+  padding-left: 20px;
 }
 
 .amount {
   display: flex;
   justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .transaction {
-  border: 1px solid black;
+  border-bottom: 1px solid lightgray;
+  border-radius: 10px;
   margin-bottom: 5px;
+  user-select: none;
 }
 
 .transaction:hover {
-  background-color: azure;
+  background-color: rgb(231, 231, 231);
+  cursor: pointer;
 }

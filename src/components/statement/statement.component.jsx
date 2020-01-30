@@ -6,18 +6,21 @@ import StatementTransaction from "../statement-transaction/statement-transaction
 const Statement = ({ statements }) => {
   const statement = statements.map(statement => {
     return (
-      <div className='statement'>
-        <div className='date-and-balance'>Date: {statement.date}</div>
-        <div className='transactions'>
+      <div className="statement">
+        <div className="date-and-balance">Date: {statement.date}</div>
+        <div className="transactions">
           {statement.transactions.map(transaction => (
-            <StatementTransaction transaction={transaction} />
+            <StatementTransaction
+              key={transaction.description}
+              transaction={transaction}
+            />
           ))}
         </div>
       </div>
     );
   });
 
-  return <div className='overview'>{statement}</div>;
+  return <div className="overview">{statement}</div>;
 };
 
 export default Statement;

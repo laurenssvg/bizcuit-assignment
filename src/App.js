@@ -26,14 +26,21 @@ class App extends React.Component {
 
   render() {
     const { statements, searchField } = this.state;
+
+    const transactionNames = statements.map(
+      statement => statement.transactions
+    );
+    console.log(statements);
+    console.log(transactionNames);
+
     const filteredStatements = statements.filter(statement =>
       statement.date.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
-      <div className='App'>
+      <div className="App">
         <Header />
-        <SearchBox placeholder='Search...' handleChange={this.handleChange} />
+        <SearchBox placeholder="Search..." handleChange={this.handleChange} />
         <Statement statements={filteredStatements} />
       </div>
     );

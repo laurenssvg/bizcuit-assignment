@@ -1,5 +1,9 @@
 .header {
-  width: 100%;
+  background: #258a40;
+  color: white;
+  margin-bottom: 2.5rem;
+  padding: 0.5rem 0;
   display: flex;
   justify-content: center;
+  user-select: none;
 }

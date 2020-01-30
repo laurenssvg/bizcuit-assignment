@@ -4,7 +4,7 @@
   margin: 20px;
 }
 
-.transactions {
-  display: flex;
-  flex-direction: column;
+.date-and-balance {
+  background-color: rgb(231, 231, 231);
+  user-select: none;
 }

@@ -1,0 +1,10 @@
+.sort {
+  background: lightgray;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sort:hover {
+  cursor: pointer;
+}
