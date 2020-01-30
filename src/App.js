@@ -1,6 +1,9 @@
 import React from "react";
 import "./App.css";
 
+import Header from "./components/header/header.component";
+import Statement from "./components/statement/statement.component";
+
 class App extends React.Component {
   constructor() {
     super();
@@ -17,6 +20,7 @@ class App extends React.Component {
 
   render() {
     const { statements } = this.state;
+
     const statement = statements.map(statement => {
       return (
         <div>
@@ -27,7 +31,11 @@ class App extends React.Component {
               <tr>
                 <td>{transaction.name}</td>
                 <td>{transaction.date}</td>
-                <td>{transaction.description}</td>
+                {transaction.debit_credit === "credit" ? (
+                  <td>+{transaction.amount}</td>
+                ) : (
+                  <td>-{transaction.amount}</td>
+                )}
               </tr>
             </table>
           ))}
@@ -36,9 +44,9 @@ class App extends React.Component {
     });
 
     return (
-      <div className='App'>
-        <h1>Bank account:</h1>
-        {statement}
+      <div>
+        <Header />
+        <Statement statement={statement} />
       </div>
     );
   }
