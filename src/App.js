@@ -11,7 +11,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let data = require("./statements.json");
+    const data = require("./statements.json");
     this.setState({ statements: data });
   }
 
@@ -36,7 +36,7 @@ class App extends React.Component {
     });
 
     return (
-      <div className="App">
+      <div className='App'>
         <h1>Bank account:</h1>
         {statement}
       </div>
