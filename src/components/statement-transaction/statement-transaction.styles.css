@@ -8,11 +8,11 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 20px;
+  font-weight: bold;
 }
 
 .transaction {
   border-bottom: 1px solid lightgray;
-  border-radius: 10px;
   margin-bottom: 5px;
   user-select: none;
 }

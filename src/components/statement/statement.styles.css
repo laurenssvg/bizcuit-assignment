@@ -7,4 +7,6 @@
 .date-and-balance {
   background-color: rgb(231, 231, 231);
   user-select: none;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
