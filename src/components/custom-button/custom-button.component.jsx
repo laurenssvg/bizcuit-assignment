@@ -3,7 +3,7 @@ import "./custom-button.styles.css";
 
 const CustomButton = () => {
   return (
-    <button type='button' className='sort'>
+    <button type="button" className="sort">
       Sort
     </button>
   );

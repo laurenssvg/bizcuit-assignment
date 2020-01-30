@@ -6,8 +6,8 @@ import StatementTransaction from "../statement-transaction/statement-transaction
 const Statement = ({ statements }) => {
   const statement = statements.map(statement => {
     return (
-      <div className="statement">
-        <div className="date-and-balance">Date: {statement.date}</div>
+      <div className="overview">
+        <div className="date-and-balance">{statement.date}</div>
         <div className="transactions">
           {statement.transactions.map(transaction => (
             <StatementTransaction
@@ -20,7 +20,7 @@ const Statement = ({ statements }) => {
     );
   });
 
-  return <div className="overview">{statement}</div>;
+  return <div className="container">{statement}</div>;
 };
 
 export default Statement;
