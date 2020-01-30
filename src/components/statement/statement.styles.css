@@ -14,9 +14,3 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}

@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/header/header.component";
 import Statement from "./components/statement/statement.component";
 import { SearchBox } from "./components/search-box/search-box.component";
+import { SortButton } from "./components/sort-button/sort-button.component";
 
 class App extends React.Component {
   constructor() {
@@ -40,7 +41,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <SearchBox placeholder="Search..." handleChange={this.handleChange} />
+        <div className="search-and-sort">
+          <SearchBox handleChange={this.handleChange} />
+          <SortButton />
+        </div>
         <Statement statements={filteredStatements} />
       </div>
     );

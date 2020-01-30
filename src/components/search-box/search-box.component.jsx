@@ -1,18 +1,12 @@
 import React from "react";
 
 import "./search-box.styles.css";
-import CustomButton from "../custom-button/custom-button.component";
+import { TextField } from "@material-ui/core";
 
-export const SearchBox = ({ placeholder, handleChange }) => {
+export const SearchBox = ({ handleChange }) => {
   return (
     <div className="search-and-sort">
-      <input
-        className="search"
-        type="search"
-        placeholder={placeholder}
-        onChange={handleChange}
-      ></input>
-      <CustomButton />
+      <TextField label="Search..." onChange={handleChange} />
     </div>
   );
 };
