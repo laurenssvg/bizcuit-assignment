@@ -5,7 +5,7 @@ import { TextField } from "@material-ui/core";
 
 export const SearchBox = ({ handleChange }) => {
   return (
-    <div className="search-and-sort">
+    <div className="search">
       <TextField label="Search..." onChange={handleChange} />
     </div>
   );

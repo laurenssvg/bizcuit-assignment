@@ -4,7 +4,6 @@ import "./App.css";
 import Header from "./components/header/header.component";
 import Statement from "./components/statement/statement.component";
 import { SearchBox } from "./components/search-box/search-box.component";
-import { SortButton } from "./components/sort-button/sort-button.component";
 
 class App extends React.Component {
   constructor() {
@@ -28,12 +27,6 @@ class App extends React.Component {
   render() {
     const { statements, searchField } = this.state;
 
-    const transactionNames = statements.map(
-      statement => statement.transactions
-    );
-    console.log(statements);
-    console.log(transactionNames);
-
     const filteredStatements = statements.filter(statement =>
       statement.date.toLowerCase().includes(searchField.toLowerCase())
     );
@@ -41,10 +34,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <div className="search-and-sort">
-          <SearchBox handleChange={this.handleChange} />
-          <SortButton />
-        </div>
+        <SearchBox handleChange={this.handleChange} />
         <Statement statements={filteredStatements} />
       </div>
     );
