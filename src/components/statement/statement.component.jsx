@@ -8,7 +8,9 @@ const Statement = ({ statements }) => {
     return (
       <div className='statement'>
         <div className='date-and-balance'>
-          {new Date(Date.parse(statement.date)).toDateString()}
+          {new Date(Date.parse(statement.date)).toLocaleDateString("en-GB", {
+            dateStyle: "full"
+          })}
         </div>
         <div className='transactions'>
           {statement.transactions.map(transaction => (
