@@ -32,7 +32,7 @@ class App extends React.Component {
     );
 
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
         <SearchBox handleChange={this.handleChange} />
         <Statement statements={filteredStatements} />
