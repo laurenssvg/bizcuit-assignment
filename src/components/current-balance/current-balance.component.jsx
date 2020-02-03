@@ -12,7 +12,7 @@ const CurrentBalance = ({ balances }) => {
 
   return (
     <div className='balance'>
-      Current balance: {formatter.format(balance[balance.length - 1])},-
+      Current balance: {formatter.format(balance[0])},-
     </div>
   );
 };

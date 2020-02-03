@@ -21,7 +21,7 @@ const TransactionModal = props => {
       <div>
         <h2>{selectedTransaction.date}</h2>
         <h3>{selectedTransaction.name}</h3>
-        <h3>{selectedTransaction.description}</h3>
+        <p>{selectedTransaction.description}</p>
         {selectedTransaction.debit_credit === "credit" ? (
           <p className='amount-modal'>
             + {formatter.format(selectedTransaction.amount)}

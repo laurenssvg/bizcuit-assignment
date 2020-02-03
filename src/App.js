@@ -18,7 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const data = require("./statements.json");
-    this.setState({ statements: data });
+    this.setState({ statements: data.reverse() });
   }
 
   handleChange = e => {
