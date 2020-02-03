@@ -1,6 +1,14 @@
 import React from "react";
-import "./statement-balance.styles.css";
+import "./current-balance.styles.css";
 
-const CurrentBalance = () => {};
+const CurrentBalance = ({ balances, statements }) => {
+  const balance = balances.map(balance => balance[1].amount);
+
+  return (
+    <div className='balance'>
+      Current balance: {balance[balance.length - 1]},-
+    </div>
+  );
+};
 
 export default CurrentBalance;

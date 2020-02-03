@@ -6,7 +6,7 @@ import StatementTransaction from "../statement-transaction/statement-transaction
 const Statement = ({ statements }) => {
   const statement = statements.map(statement => {
     return (
-      <div className='statement'>
+      <div key={statement.id} className='statement'>
         <div className='date-and-balance'>
           {new Date(Date.parse(statement.date)).toLocaleDateString("en-GB", {
             dateStyle: "full"
@@ -23,8 +23,7 @@ const Statement = ({ statements }) => {
       </div>
     );
   });
-
-  return <div className='container'>{statement}</div>;
+  return statement;
 };
 
 export default Statement;

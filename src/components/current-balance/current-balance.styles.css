@@ -1,0 +1,12 @@
+.balance {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(226, 226, 226);
+  padding: 20px;
+  text-align: center;
+  color: #275e35;
+  font-weight: bold;
+  font-size: 25px;
+  user-select: none;
+}

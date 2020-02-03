@@ -17,4 +17,6 @@ const TransactionModal = props => {
   );
 };
 
+Modal.setAppElement("body");
+
 export default TransactionModal;

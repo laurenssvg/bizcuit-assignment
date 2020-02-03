@@ -4,7 +4,7 @@ import TransactionModal from "../transaction-modal/transaction-modal.component";
 
 class StatementTransaction extends React.Component {
   constructor(props) {
-    super();
+    super(props);
 
     this.state = {
       modalIsOpen: false,
