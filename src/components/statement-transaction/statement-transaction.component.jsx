@@ -36,11 +36,11 @@ class StatementTransaction extends React.Component {
         </span>
         {this.props.transaction.debit_credit === "credit" ? (
           <span className='amount'>
-            + {formatter.format(this.props.transaction.amount)},-
+            + {formatter.format(this.props.transaction.amount)}
           </span>
         ) : (
           <span className='amount'>
-            - {formatter.format(this.props.transaction.amount)},-
+            - {formatter.format(this.props.transaction.amount)}
           </span>
         )}
         <TransactionModal
