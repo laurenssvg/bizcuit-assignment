@@ -5,9 +5,17 @@ import StatementTransaction from "../statement-transaction/statement-transaction
 
 const Statement = ({ statements, searchField }) => {
   const statement = statements.map(statement => {
-    const filteredTransactions = statement.transactions.filter(transaction =>
-      transaction.name.toLowerCase().includes(searchField.toLowerCase())
+    const filteredTransactions = statement.transactions.filter(
+      transaction =>
+        transaction.name.toLowerCase().includes(searchField.toLowerCase()) ||
+        // eslint-disable-next-line eqeqeq
+        transaction.amount == searchField.toLowerCase() ||
+        // eslint-disable-next-line eqeqeq
+        transaction.description
+          .toLowerCase()
+          .includes(searchField.toLowerCase())
     );
+
     return (
       <div key={statement.id} className='statement'>
         <div className='date-and-balance'>

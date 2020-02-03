@@ -4,18 +4,16 @@ import TransactionModal from "../transaction-modal/transaction-modal.component";
 
 class StatementTransaction extends React.Component {
   constructor(props) {
-    super(props);
+    super();
 
     this.state = {
-      modalIsOpen: false,
-      selectedTransaction: undefined
+      modalIsOpen: false
     };
   }
 
   openModal = () => {
     this.setState({
-      modalIsOpen: true,
-      selectedTransaction: this.props.transaction.name
+      modalIsOpen: true
     });
   };
 
@@ -25,21 +23,29 @@ class StatementTransaction extends React.Component {
   };
 
   render() {
+    const formatter = new Intl.NumberFormat("nl-NL", {
+      style: "currency",
+      currency: "EUR",
+      minimumFractionDigits: 2
+    });
     return (
       <div onClick={this.openModal} className='transaction'>
         <span className='name'>{this.props.transaction.name}</span>
+        <span className='description'>
+          {this.props.transaction.description}
+        </span>
         {this.props.transaction.debit_credit === "credit" ? (
           <span className='amount'>
-            +{this.props.transaction.amount.toFixed(2)},-
+            + {formatter.format(this.props.transaction.amount)},-
           </span>
         ) : (
           <span className='amount'>
-            -{this.props.transaction.amount.toFixed(2)},-
+            - {formatter.format(this.props.transaction.amount)},-
           </span>
         )}
         <TransactionModal
           modalIsOpen={this.state.modalIsOpen}
-          selectedTransaction={this.state.selectedTransaction}
+          selectedTransaction={this.props.transaction}
           closeModal={this.closeModal}
         />
       </div>

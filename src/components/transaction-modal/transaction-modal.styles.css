@@ -26,7 +26,11 @@
   text-align: center;
 }
 
-h3 {
+h2 {
   background-color: #275e35;
   color: white;
+}
+
+.amount-modal {
+  font-size: 30px;
 }
