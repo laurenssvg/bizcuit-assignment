@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import "./transaction-modal.styles.css";
+import { Button } from "@material-ui/core";
 
 const TransactionModal = props => {
   return (
@@ -12,7 +13,9 @@ const TransactionModal = props => {
       closeTimeoutMS={200}
     >
       <h3>{props.selectedTransaction}</h3>
-      <button onClick={props.closeModal}>Close</button>
+      <Button variant='outlined' onClick={props.closeModal}>
+        Close
+      </Button>
     </Modal>
   );
 };

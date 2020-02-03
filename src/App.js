@@ -26,13 +26,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { statements, searchField } = this.state;
-
-    const filteredStatements = statements
-      .filter(statement =>
-        statement.date.toLowerCase().includes(searchField.toLowerCase())
-      )
-      .reverse();
+    const { statements } = this.state;
 
     const balances = statements.map(statement => statement.balances);
 
@@ -43,7 +37,10 @@ class App extends React.Component {
         <Header iban={iban} />
         <SearchBox handleChange={this.handleChange} />
         <CurrentBalance balances={balances} statements={statements} />
-        <Statement statements={filteredStatements} />
+        <Statement
+          statements={statements}
+          searchField={this.state.searchField}
+        />
       </div>
     );
   }

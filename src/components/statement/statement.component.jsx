@@ -3,8 +3,11 @@ import "./statement.styles.css";
 
 import StatementTransaction from "../statement-transaction/statement-transaction.component";
 
-const Statement = ({ statements }) => {
+const Statement = ({ statements, searchField }) => {
   const statement = statements.map(statement => {
+    const filteredTransactions = statement.transactions.filter(transaction =>
+      transaction.name.toLowerCase().includes(searchField.toLowerCase())
+    );
     return (
       <div key={statement.id} className='statement'>
         <div className='date-and-balance'>
@@ -13,12 +16,14 @@ const Statement = ({ statements }) => {
           })}
         </div>
         <div className='transactions'>
-          {statement.transactions.map(transaction => (
-            <StatementTransaction
-              key={transaction.description}
-              transaction={transaction}
-            />
-          ))}
+          {filteredTransactions.map(transaction => {
+            return (
+              <StatementTransaction
+                key={transaction.description}
+                transaction={transaction}
+              />
+            );
+          })}
         </div>
       </div>
     );
